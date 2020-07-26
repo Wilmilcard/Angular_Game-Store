@@ -6,7 +6,7 @@ import { HttpClient } from '@angular/common/http';
 @Injectable({
   providedIn: 'root'
 })
-export class DataService {
+export class DataService { 
   private url = 'http://localhost:8080/Api';
 
   constructor(private http: HttpClient) { }
@@ -25,5 +25,6 @@ export class DataService {
   }
 
   //Protagonista
+  
 
 }
