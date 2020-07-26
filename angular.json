@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "matrixTechPrueba"
+    }
+  },
+  "defaultProject": "matrixTechPrueba",
+  "cli": {
+    "analytics": "3755f995-50ae-4959-97a4-8b400e5eb3f9"
+  }
 }
