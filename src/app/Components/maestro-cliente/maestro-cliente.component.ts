@@ -15,22 +15,23 @@ export class MaestroClienteComponent implements OnInit {
   nombre: string;
   nit: string;
   tel: number;
+  nac: string;
 
   constructor(private data: DataService) { }
 
-  onKeyName(event) {this.nombre = event.target.value;}
-  onKeyNit(event) {this.nit = event.target.value;}
-  onKeyTel(event) {this.tel = event.target.value;}
-
   ngOnInit(): void {
-    this.data.getAllClientes().subscribe(data => console.log(data));
+    //this.data.getAllClientes().subscribe(data => console.log(data));
     this.data.getAllClientes().subscribe(data => (this.clientes = data));
   }
 
   crearCliente(){
-    alert(this.tel + this.nit + this.nombre);
-    const newCliente = { nombre: this.nombre, nacimiento: '1994-06-06', nit: this.nit, telefono: this.tel };
+    const newCliente = { nombre: this.nombre, nacimiento: this.nac, nit: this.nit, telefono: this.tel };
     this.data.postCliente(newCliente).subscribe(cliente => console.log(cliente));
   }
+
+  onKeyName(event) {this.nombre = event.target.value;}
+  onKeyNit(event) {this.nit = event.target.value;}
+  onKeyTel(event) {this.tel = event.target.value;}
+  onKeyNac(event) {this.nac = event.target.value;}
 
 }

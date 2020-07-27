@@ -1,1 +1,29 @@
-<p>maestro-protagonista works!</p>
+<form style="margin: 40px;">
+  <h5>Administrar los Personajes</h5>
+  <div class="form-group">
+      <label for="exampleInputEmail1">Nombre</label>
+      <input class="form-control" (keyup)="onKeyName($event)">
+  </div>
+  <button type="submit" (click)="crearProtagonista()" class="btn btn-primary">Crear</button>
+  <br><br>
+  <div class="form-group col-md-6">
+    <label for="inputState"><b>Personajes ya asosiaciados a un juego</b></label>
+    <div class="table-responsive">
+        <table class="table table-striped table-sm" >
+          <thead>
+            <tr>
+              <th>Nombre</th>
+              <th>Juego</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor='let protagonista of protagonistas'>
+              <td>{{protagonista.P_NOMBRE}}</td>
+              <td>{{protagonista.J_NOMBRE}}</td>
+            </tr>
+          </tbody>
+        </table>
+    </div>
+  </div>
+</form>
+

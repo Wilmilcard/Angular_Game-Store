@@ -1,0 +1,9 @@
+<form style="margin: 40px;">
+    <h5>Administrar los Directores</h5>
+    <div class="form-group">
+        <label for="exampleInputEmail1">Nombre</label>
+        <input class="form-control" (keyup)="onKeyName($event)">
+    </div>
+    <button type="submit" (click)="crearDirector()" class="btn btn-primary">Crear</button>
+    <br><br>
+  </form>

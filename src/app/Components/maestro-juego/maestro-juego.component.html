@@ -1,41 +1,63 @@
-
+<div class="container-fluid">
 <form style="margin: 40px;">
     <h5>Administrar los juegos</h5>
     <p></p>
     <div class="form-group">
       <label for="exampleInputEmail1">Nombre</label>
-      <input class="form-control">
-    </div>
-    <div class="form-group">
-        <label for="exampleInputPassword1">Año del juego</label>
-        <input class="form-control" id="exampleInputPassword1">
+      <input class="form-control" (keyup)="onKeyNombre($event)">
     </div>
     <div class="form-row">
         <div class="form-group col-md-6">
             <label for="inputState">Director del juego</label>
-            <select id="inputState" class="form-control">
-              <option selected>lista...</option>
-              <option>...</option>
+            <select class="form-control" [(ngModel)]="id_director" name="cmbDirector">
+              <option selected>Seleccione uno</option>
+              <option [value]="director.ID" *ngFor='let director of directores'>{{director.NOMBRE}}</option>
             </select>
         </div>
         <div class="form-group col-md-6">
-            <label for="inputState">personaje del juego</label>
-            <select id="inputState" class="form-control">
-              <option selected>lista...</option>
-              <option>...</option>
-            </select>
-        </div>
+          <label for="inputState">Protagonista del juego</label>
+          <select class="form-control" [(ngModel)]="id_protagonista" name="cmbProtagonista">
+            <option selected>Seleccione uno</option>
+            <option [value]="protagonista.ID" *ngFor='let protagonista of protagonistas' >
+              {{protagonista.NOMBRE}}
+            </option>
+          </select>
+      </div>
     </div>
     <div class="form-row">
-        <div class="form-group col-md-6">
-            <label for="inputPassword4">Stock</label>
-            <input class="form-control" placeholder="cantidad de stock de juego">
+        <div class="form-group col-md-4">
+            <label for="inputPassword4" >Stock</label>
+            <input class="form-control" (keyup)="onKeyStock($event)" placeholder="cantidad de stock de juego">
           </div>
-        <div class="form-group col-md-6">
-          <label for="inputPassword4">Valor</label>
-          <input  class="form-control" placeholder="valor de juego">
+        <div class="form-group col-md-4">
+          <label for="inputPassword4" >Valor</label>
+          <input  class="form-control" (keyup)="onKeyValor($event)" placeholder="valor de juego">
         </div>
+        <div class="form-group col-md-4">
+          <label for="exampleInputPassword1">Año del juego</label>
+          <input class="form-control" (keyup)="onKeyAno($event)">
+      </div>
     </div>
-    
-    <button type="submit" class="btn btn-primary">Crear</button>
+    <label for="inputPassword4" >Plataforma</label>
+    <div class="form-row">
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="checkbox" id="er" name="ck1" [(ngModel)]="isCheckedPC">
+        <label class="form-check-label" for="inlineCheckbox1">PC</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="checkbox" id="ret" name="ck2" [(ngModel)]="isCheckedPS">
+        <label class="form-check-label" for="inlineCheckbox2">PlayStation</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="checkbox" id="gr" name="ck2" [(ngModel)]="isCheckedXB">
+        <label class="form-check-label" for="inlineCheckbox3">Xbox</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="checkbox" id="df" name="ck2" [(ngModel)]="isCheckedN">
+        <label class="form-check-label" for="inlineCheckbox3">Nintendo</label>
+      </div>
+    </div>
+    <br>
+    <button type="submit" class="btn btn-primary" (click)="crearJuego()">Crear</button>
   </form>
+</div>
