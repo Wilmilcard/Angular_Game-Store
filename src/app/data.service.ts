@@ -7,6 +7,7 @@ import { Director } from './Models/director';
 import { Juego } from './Models/juego';
 import { Plataforma } from './Models/plataforma';
 import { Plataforma_juego } from './Models/platafora_juego';
+import { Reporte_uno } from './Models/reporte_uno';
 
 @Injectable({
   providedIn: 'root'
@@ -58,5 +59,10 @@ export class DataService {
 
   postPlataformaJuego(platafoma_juego: Plataforma_juego): Observable<Plataforma>{
     return this.http.post<Protagonista>(`${this.url}/plataforma_juego.php?ID_PLATAFORMA=${platafoma_juego.id_plataforma}`, null);
+  }
+
+  //Reportes
+  getReporteUno(id: number): Observable<Reporte_uno[]>{
+    return this.http.get<Reporte_uno[]>( `${this.url}/reporte_uno.php?id=${id}`);
   }
 }

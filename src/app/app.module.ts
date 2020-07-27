@@ -12,6 +12,7 @@ import { MaestroClienteComponent } from './Components/maestro-cliente/maestro-cl
 import { ConsultaClienteComponent } from './Components/consulta-cliente/consulta-cliente.component';
 import { MaestroProtagonistaComponent } from './Components/maestro-protagonista/maestro-protagonista.component';
 import { MaestroDirectorComponent } from './components/maestro-director/maestro-director.component';
+import { ReporteUnoComponent } from './components/reporte-uno/reporte-uno.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { MaestroDirectorComponent } from './components/maestro-director/maestro-
     MaestroClienteComponent,
     ConsultaClienteComponent,
     MaestroProtagonistaComponent,
-    MaestroDirectorComponent
+    MaestroDirectorComponent,
+    ReporteUnoComponent
   ],
   imports: [
     BrowserModule,

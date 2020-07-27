@@ -7,6 +7,7 @@ import { MaestroClienteComponent } from './Components/maestro-cliente/maestro-cl
 import { ConsultaClienteComponent } from './Components/consulta-cliente/consulta-cliente.component';
 import { MaestroProtagonistaComponent } from './Components/maestro-protagonista/maestro-protagonista.component';
 import { MaestroDirectorComponent } from './components/maestro-director/maestro-director.component';
+import { ReporteUnoComponent } from './components/reporte-uno/reporte-uno.component';
 
 
 const routes: Routes = [
@@ -17,7 +18,8 @@ const routes: Routes = [
   { path : 'juego', component : MaestroJuegoComponent },
   { path : 'cliente', component : MaestroClienteComponent },
   { path : 'consulta_cliente', component : ConsultaClienteComponent },
-  { path : 'director', component : MaestroDirectorComponent }
+  { path : 'director', component : MaestroDirectorComponent },
+  { path : 'reporte_uno', component : ReporteUnoComponent }
 ];
 
 @NgModule({
