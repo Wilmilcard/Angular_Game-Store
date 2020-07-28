@@ -1,1 +1,47 @@
-<p>consulta-cliente works!</p>
+<form style="margin: 40px;">
+    <h5>Consulta Consolidado</h5>
+    <p></p>
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <select class="form-control" [(ngModel)]="id_cliente" name="cmbProtagonista">
+              <option selected>Seleccione uno</option>
+              <option [value]="cliente.ID" *ngFor='let cliente of clientes' >
+                {{cliente.NOMBRE}}
+              </option>
+            </select>
+        </div>
+        <div class="form-group col-md-6">
+            <div class="container">
+              <button type="submit" class="btn btn-primary" (click)="consultar()">Consultar</button>
+          </div>
+        </div>
+    </div>
+    
+
+    <div >
+        <table class="table">
+            <thead class="thead-dark">
+              <tr>
+                <th scope="col">Alquiler</th>
+                <th scope="col">Reservacion</th>
+                <th scope="col">Devolucion</th>
+                <th scope="col">Juego</th>
+                <th scope="col">Cant</th>
+                <th scope="col">Valor Total</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor='let cliente of consultaCliente'>
+                <th scope="row">{{cliente.ID_ALQUILER}}</th>
+                <td>{{cliente.FECHA_RESERVACION}}</td>
+                <td>{{cliente.FECHA_DEVOLUCION}}</td>
+                <td>{{cliente.NOMBRE_JUEGO}}</td>
+                <td>{{cliente.CANTIDAD}}</td>
+                <td>{{cliente.VALOR}}</td>
+              </tr>
+            </tbody>
+          </table>
+    </div>
+
+
+  </form>

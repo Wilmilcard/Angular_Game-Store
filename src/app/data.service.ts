@@ -16,6 +16,7 @@ import { Reporte_seis } from './Models/reporte_seis';
 import { Reporte_siete } from './Models/reporte_siete';
 import { Reporte_ocho } from './Models/reporte_ocho';
 import { Reporte_nueve } from './Models/reporte_nueve';
+import { Marca } from './Models/marca';
 
 @Injectable({
   providedIn: 'root'
@@ -69,6 +70,11 @@ export class DataService {
     return this.http.post<Protagonista>(`${this.url}/plataforma_juego.php?ID_PLATAFORMA=${platafoma_juego.id_plataforma}`, null);
   }
 
+  //Marca
+  getAllMarcas(): Observable<Marca[]>{
+    return this.http.get<Marca[]>(`${this.url}/marca.php`);
+  }
+
   //Reportes
   getReporteUno(id: number): Observable<Reporte_uno[]>{
     return this.http.get<Reporte_uno[]>( `${this.url}/reporte_uno.php?id=${id}`);
@@ -86,28 +92,28 @@ export class DataService {
     return this.http.get<Reporte_tres[]>( `${this.url}/reporte_tres.php`);
   }
 
-  getReporteCuatro(): Observable<Reporte_cuatro[]>{
-    return this.http.get<Reporte_cuatro[]>( `${this.url}/reporte_cuatro.php`);
+  getReporteCuatro(hoy: string): Observable<Reporte_cuatro[]>{
+    return this.http.get<Reporte_cuatro[]>( `${this.url}/reporte_cuatro.php?fecha=${hoy}`);
   }
 
-  getReporteCinco(): Observable<Reporte_cinco[]>{
-    return this.http.get<Reporte_cinco[]>( `${this.url}/reporte_cinco.php`);
+  getReporteCinco(id: number): Observable<Reporte_cinco[]>{
+    return this.http.get<Reporte_cinco[]>( `${this.url}/reporte_cinco.php?id=${id}`);
   }
 
-  getReporteSeis(): Observable<Reporte_seis[]>{
-    return this.http.get<Reporte_seis[]>( `${this.url}/reporte_seis.php`);
+  getReporteSeis(id: number): Observable<Reporte_seis[]>{
+    return this.http.get<Reporte_seis[]>( `${this.url}/reporte_seis.php?id=${id}`);
   }
 
-  getReporteSiete(): Observable<Reporte_siete[]>{
-    return this.http.get<Reporte_siete[]>( `${this.url}/reporte_siete.php`);
+  getReporteSiete(id: number): Observable<Reporte_siete[]>{
+    return this.http.get<Reporte_siete[]>( `${this.url}/reporte_siete.php?id=${id}`);
   }
 
-  getReporteOcho(): Observable<Reporte_ocho[]>{
-    return this.http.get<Reporte_ocho[]>( `${this.url}/reporte_ocho.php`);
+  getReporteOcho(edadInicial: string, edadFinal: string): Observable<Reporte_ocho[]>{
+    return this.http.get<Reporte_ocho[]>( `${this.url}/reporte_ocho.php?edadInicial=${edadInicial}&edadFinal=${edadFinal}`);
   }
 
-  getReporteNueve(): Observable<Reporte_nueve[]>{
-    return this.http.get<Reporte_nueve[]>( `${this.url}/reporte_nueve.php`);
+  getReporteNueve(id: number): Observable<Reporte_nueve[]>{
+    return this.http.get<Reporte_nueve[]>( `${this.url}/reporte_nueve.php?id=${id}`);
   }
   
 }
