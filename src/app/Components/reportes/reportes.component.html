@@ -1,0 +1,119 @@
+<!-- <form style="margin: 40px;">
+    <h5>Conocer el cliente más frecuente del alquiler de juegos</h5>
+    <p></p>
+    <button (click)="generarReporteUno()" class="btn btn-primary">Consultar</button>
+</form> -->
+
+<div class="my-3 p-3 bg-white rounded shadow-sm" style="margin: 40px;">
+  <h5 class="border-bottom border-gray pb-2 mb-0">Lista de reportes</h5>
+  <div class="media text-muted pt-3">
+    <svg class="bd-placeholder-img mr-2 rounded" width="32" height="32" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 32x32"><title>Placeholder</title><rect width="100%" height="100%" fill="#007bff"></rect></svg>
+    <div class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+      <div class="d-flex justify-content-between align-items-center w-100">
+        <strong class="text-gray-dark">Reporte 1</strong>
+        <button (click)="generarReporteUno()" class="btn btn-primary">Generar reporte</button>
+      </div>
+      <span class="d-block">Conocer el cliente más frecuente del alquiler de juegos, seleccione un cliente en la lista</span>
+        <div class="form-group col-md-6">
+            <select class="form-control" [(ngModel)]="id_cliente"  name="cmbClientes" (change)="onChange($event.target.value)">
+                <option [value]="cliente.ID" *ngFor='let cliente of clientes' >
+                    {{cliente.NOMBRE_CLIENTE}}
+                </option>
+            </select>
+        </div>
+    </div>
+  </div>
+  <div class="media text-muted pt-3">
+    <svg class="bd-placeholder-img mr-2 rounded" width="32" height="32" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 32x32"><title>Placeholder</title><rect width="100%" height="100%" fill="#e83e8c"></rect></svg>
+    <div class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+      <div class="d-flex justify-content-between align-items-center w-100">
+        <strong class="text-gray-dark">Reporte 2</strong>
+        <button (click)="generarReporteDos()" class="btn btn-primary">Generar reporte</button>
+      </div>
+      <span class="d-block">Conocer el cliente más frecuente del alquiler de juegos</span>
+    </div>
+  </div>
+  <div class="media text-muted pt-3">
+    <svg class="bd-placeholder-img mr-2 rounded" width="32" height="32" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 32x32"><title>Placeholder</title><rect width="100%" height="100%" fill="#6f42c1"></rect></svg>
+    <div class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+      <div class="d-flex justify-content-between align-items-center w-100">
+        <strong class="text-gray-dark">Reporte 3</strong>
+        <button (click)="generarReporteTres()" class="btn btn-primary">Generar reporte</button>
+      </div>
+      <span class="d-block">Conocer el título de juego más rentado</span>
+    </div>
+  </div>
+  <div class="media text-muted pt-3">
+    <svg class="bd-placeholder-img mr-2 rounded" width="32" height="32" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 32x32"><title>Placeholder</title><rect width="100%" height="100%" fill="#6f42c1"></rect></svg>
+    <div class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+      <div class="d-flex justify-content-between align-items-center w-100">
+        <strong class="text-gray-dark">Reporte 4</strong>
+        <button (click)="generarReporteCuatro()" class="btn btn-primary">Generar reporte</button>
+      </div>
+      <span class="d-block">Permitir registrar todos los alquileres hechos y generar prueba de compra</span>
+    </div>
+  </div>
+  <div class="media text-muted pt-3">
+    <svg class="bd-placeholder-img mr-2 rounded" width="32" height="32" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 32x32"><title>Placeholder</title><rect width="100%" height="100%" fill="#6f42c1"></rect></svg>
+    <div class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+      <div class="d-flex justify-content-between align-items-center w-100">
+        <strong class="text-gray-dark">Reporte 5</strong>
+        <button (click)="generarReporteCinco()" class="btn btn-primary">Generar reporte</button>
+      </div>
+      <span class="d-block">Poder consultar las ventas del día</span>
+    </div>
+  </div>
+  <div class="media text-muted pt-3">
+    <svg class="bd-placeholder-img mr-2 rounded" width="32" height="32" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 32x32"><title>Placeholder</title><rect width="100%" height="100%" fill="#6f42c1"></rect></svg>
+    <div class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+      <div class="d-flex justify-content-between align-items-center w-100">
+        <strong class="text-gray-dark">Reporte 6</strong>
+        <button (click)="generarReporteSeis()" class="btn btn-primary">Generar reporte</button>
+      </div>
+      <span class="d-block">Poder consultar por director de Juego</span>
+    </div>
+  </div>
+  <div class="media text-muted pt-3">
+    <svg class="bd-placeholder-img mr-2 rounded" width="32" height="32" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 32x32"><title>Placeholder</title><rect width="100%" height="100%" fill="#6f42c1"></rect></svg>
+    <div class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+      <div class="d-flex justify-content-between align-items-center w-100">
+        <strong class="text-gray-dark">Reporte 7</strong>
+        <button (click)="generarReporteSiete()" class="btn btn-primary">Generar reporte</button>
+      </div>
+      <span class="d-block">Poder consultar por protagonista del juego</span>
+    </div>
+  </div>
+  <div class="media text-muted pt-3">
+    <svg class="bd-placeholder-img mr-2 rounded" width="32" height="32" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 32x32"><title>Placeholder</title><rect width="100%" height="100%" fill="#6f42c1"></rect></svg>
+    <div class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+      <div class="d-flex justify-content-between align-items-center w-100">
+        <strong class="text-gray-dark">Reporte 8</strong>
+        <button (click)="generarReporteOcho()" class="btn btn-primary">Generar reporte</button>
+      </div>
+      <span class="d-block">Poder consultar por productor y&o marca del juego</span>
+    </div>
+  </div>
+  <div class="media text-muted pt-3">
+    <svg class="bd-placeholder-img mr-2 rounded" width="32" height="32" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 32x32"><title>Placeholder</title><rect width="100%" height="100%" fill="#6f42c1"></rect></svg>
+    <div class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+      <div class="d-flex justify-content-between align-items-center w-100">
+        <strong class="text-gray-dark">Reporte 9</strong>
+        <button (click)="generarReporteNueve()" class="btn btn-primary">Generar reporte</button>
+      </div>
+      <span class="d-block">Poder saber cual juego es el menos rentado por rangos de edad de 10 años en 10 años</span>
+    </div>
+  </div>
+  <div class="media text-muted pt-3">
+    <svg class="bd-placeholder-img mr-2 rounded" width="32" height="32" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 32x32"><title>Placeholder</title><rect width="100%" height="100%" fill="#6f42c1"></rect></svg>
+    <div class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+      <div class="d-flex justify-content-between align-items-center w-100">
+        <strong class="text-gray-dark">Reporte 10</strong>
+        <button (click)="generarReporteNueve()" class="btn btn-primary">Generar reporte</button>
+      </div>
+      <span class="d-block">consulte su balance, fecha de entraga y títulos alquilados</span>
+    </div>
+  </div>
+  <small class="d-block text-right mt-3">
+    <a href="#">All suggestions</a>
+  </small>
+</div>

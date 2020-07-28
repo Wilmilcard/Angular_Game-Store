@@ -8,6 +8,14 @@ import { Juego } from './Models/juego';
 import { Plataforma } from './Models/plataforma';
 import { Plataforma_juego } from './Models/platafora_juego';
 import { Reporte_uno } from './Models/reporte_uno';
+import { Reporte_dos } from './Models/reporte_dos';
+import { Reporte_tres } from './Models/reporte_tres';
+import { Reporte_cuatro } from './Models/reporte_cuatro';
+import { Reporte_cinco } from './Models/reporte_cinco';
+import { Reporte_seis } from './Models/reporte_seis';
+import { Reporte_siete } from './Models/reporte_siete';
+import { Reporte_ocho } from './Models/reporte_ocho';
+import { Reporte_nueve } from './Models/reporte_nueve';
 
 @Injectable({
   providedIn: 'root'
@@ -65,4 +73,41 @@ export class DataService {
   getReporteUno(id: number): Observable<Reporte_uno[]>{
     return this.http.get<Reporte_uno[]>( `${this.url}/reporte_uno.php?id=${id}`);
   }
+
+  getReporteUnoClientes(): Observable<Reporte_uno[]>{
+    return this.http.get<Reporte_uno[]>( `${this.url}/reporte_uno.php`);
+  }
+
+  getReporteDos(): Observable<Reporte_dos[]>{
+    return this.http.get<Reporte_dos[]>( `${this.url}/reporte_dos.php`);
+  }
+
+  getReporteTres(): Observable<Reporte_tres[]>{
+    return this.http.get<Reporte_tres[]>( `${this.url}/reporte_tres.php`);
+  }
+
+  getReporteCuatro(): Observable<Reporte_cuatro[]>{
+    return this.http.get<Reporte_cuatro[]>( `${this.url}/reporte_cuatro.php`);
+  }
+
+  getReporteCinco(): Observable<Reporte_cinco[]>{
+    return this.http.get<Reporte_cinco[]>( `${this.url}/reporte_cinco.php`);
+  }
+
+  getReporteSeis(): Observable<Reporte_seis[]>{
+    return this.http.get<Reporte_seis[]>( `${this.url}/reporte_seis.php`);
+  }
+
+  getReporteSiete(): Observable<Reporte_siete[]>{
+    return this.http.get<Reporte_siete[]>( `${this.url}/reporte_siete.php`);
+  }
+
+  getReporteOcho(): Observable<Reporte_ocho[]>{
+    return this.http.get<Reporte_ocho[]>( `${this.url}/reporte_ocho.php`);
+  }
+
+  getReporteNueve(): Observable<Reporte_nueve[]>{
+    return this.http.get<Reporte_nueve[]>( `${this.url}/reporte_nueve.php`);
+  }
+  
 }

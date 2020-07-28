@@ -12,7 +12,11 @@ import { MaestroClienteComponent } from './Components/maestro-cliente/maestro-cl
 import { ConsultaClienteComponent } from './Components/consulta-cliente/consulta-cliente.component';
 import { MaestroProtagonistaComponent } from './Components/maestro-protagonista/maestro-protagonista.component';
 import { MaestroDirectorComponent } from './components/maestro-director/maestro-director.component';
-import { ReporteUnoComponent } from './components/reporte-uno/reporte-uno.component';
+import { PdfMakeWrapper } from 'pdfmake-wrapper';
+import pdfFonts from "pdfmake/build/vfs_fonts";
+import { ReportesComponent } from './components/reportes/reportes.component'; 
+PdfMakeWrapper.setFonts(pdfFonts);
+
 
 @NgModule({
   declarations: [
@@ -24,7 +28,7 @@ import { ReporteUnoComponent } from './components/reporte-uno/reporte-uno.compon
     ConsultaClienteComponent,
     MaestroProtagonistaComponent,
     MaestroDirectorComponent,
-    ReporteUnoComponent
+    ReportesComponent
   ],
   imports: [
     BrowserModule,
