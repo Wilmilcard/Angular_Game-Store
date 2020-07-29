@@ -1,27 +1,29 @@
-# MatrixTechPrueba
+# Proyecto Prueba Matrix Tech
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.4.
+Pagina web alquiler de video juegos.
 
-## Development server
+## Tecnologias implementadas
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+- Angular 9.1.4
+- php
+- node js 12.16.3
+- Apache / MySQL
 
-## Code scaffolding
+## Ejecucion del programa
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Los archivos para el Back-End y el funcionamiento del Front-End estan en el correo.
 
-## Build
+### Back-End
+- Paso 1: Instalar XAMPP.
+- paso 2: Ejecuar Apache.
+- Paso 3: Ejecutar MySql.
+- Paso 4: Abrir MySQL y ejecutar script SQL.
+- Paso 5: Descomprimir el archivo `Web Services.rar` en la carpeta `C:\xampp\htdocs` del XAMPP.
+- Paso 6: en el archivo `config.php` estan las credenciales de acceso a la base de datos.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+### Front-End
+- Paso 1: Clonar el repositorio en una ubicacion de preferencia.
+- Paso 2: Abrir con el IDE (Visual Code).
+- Paso 3: validar en el archivo `data.service.ts` en la linea 27, donde se encuentra la url de la API.
+- Paso 4: ejecutar el progama con el comando `ng serve --open`.
 
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
