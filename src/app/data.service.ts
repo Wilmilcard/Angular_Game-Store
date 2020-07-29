@@ -17,6 +17,8 @@ import { Reporte_siete } from './Models/reporte_siete';
 import { Reporte_ocho } from './Models/reporte_ocho';
 import { Reporte_nueve } from './Models/reporte_nueve';
 import { Marca } from './Models/marca';
+import { Alquiler } from './Models/alquiler';
+import { Alquiler_det } from './Models/alquiler_det';
 
 @Injectable({
   providedIn: 'root'
@@ -62,12 +64,33 @@ export class DataService {
   }
 
   //Juegos
+  getAllJuegos(): Observable<Juego[]>{
+    return this.http.get<Juego[]>(`${this.url}/juego.php`);
+  }
+
+  getJuego(id: number): Observable<string>{
+    return this.http.get<string>(`${this.url}/juego.php?id=${id}`);
+  }
+
+  getJuegoPrecio(id: number): Observable<number>{
+    return this.http.get<number>(`${this.url}/juego.php?id=${id}&precio=1`);
+  }
+
   postJuego(juego: Juego): Observable<Juego>{
     return this.http.post<Juego>(`${this.url}/juego.php?NOMBRE=${juego.nombre}&ANO=${juego.ano}&DIRECTOR=${juego.id_director}&STOCK=${juego.stock}&PRECIO=${juego.precio}&PROTAGONISTA=${juego.id_protagonista}`, null);
   }
 
   postPlataformaJuego(platafoma_juego: Plataforma_juego): Observable<Plataforma>{
     return this.http.post<Protagonista>(`${this.url}/plataforma_juego.php?ID_PLATAFORMA=${platafoma_juego.id_plataforma}`, null);
+  }
+
+  //Alquiler
+  postAlquiler(idCliente: number, vTotal: number, fDevolucion: string): Observable<Alquiler>{
+    return this.http.post<Alquiler>(`${this.url}/alquiler.php?idCliente=${idCliente}&valorTotal=${vTotal}&fechaDevolucion=${fDevolucion}`, null);
+  }
+
+  postAlquiler_det(idJuego: number, cant: number, vUnitario: number): Observable<Alquiler_det>{
+    return this.http.post<Alquiler_det>(`${this.url}/alquiler_det.php?idJuego=${idJuego}&cant=${cant}&valorUnitario=${vUnitario}`, null);
   }
 
   //Marca

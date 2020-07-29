@@ -2,26 +2,56 @@
     <h5>Generar Alquiler para cliente</h5>
     <p></p>
     <div class="form-row">
-      <div class="form-group col-md-4">
+      <div class="form-group col-md-6">
         <label for="inputState">Nombre del cliente</label>
-        <select id="inputState" class="form-control">
-          <option selected>lista...</option>
-          <option>...</option>
+        <select class="form-control" [(ngModel)]="id_cliente" name="cmbProtagonista">
+          <option selected>Seleccione uno</option>
+          <option [value]="cliente.ID" *ngFor='let cliente of clientes' >
+            {{cliente.NOMBRE}}
+          </option>
         </select>
-      </div>
+    </div>
     </div>
     <div class="form-row">
-      <div class="form-group col-md-4">
+      <div class="form-group col-md-3">
         <label for="inputState">Nombre del juego</label>
-        <select id="inputState" class="form-control">
-          <option selected>seleccione...</option>
-          <option>...</option>
+        <select id="inputState" [(ngModel)]="id_juego" class="form-control" name="jueg">
+          <option selected>seleccione</option>
+          <option  [value]="juego.ID" *ngFor='let juego of juegos'>{{juego.NOMBRE}}</option>
         </select>
       </div>
-      <div class="form-group col-md-6">
-        <label for="inputPassword4">Valor de la reserva</label>
-        <input type="password" class="form-control" id="inputPassword4" placeholder="valor de juego">
+      <div class="form-group col-md-2">
+        <label for="inputPassword4">Cantidad</label>
+        <input class="form-control" id="inputPassword4" (keyup)="onKeyCant($event)" placeholder="ingrese numero de copias a alquilar">
+      </div>
+      <div class="form-group col-md-2">
+        <label for="inputPassword4">Fecha de devolucion</label>
+        <input class="form-control" id="inputPassword4" (keyup)="onKeyFecha($event)" placeholder="YYYY-MM-DD">
       </div>
     </div>
-    <button type="submit" class="btn btn-primary">Generar Reserva</button>
+    <div>
+      <button type="submit" class="btn btn-primary" style=" margin: 10px;" (click)="agregarJuego()" >Agregar Juego</button>
+      <button type="submit" class="btn btn-success" style="margin: 10px;" (click)="crearAlquiler()" >Generar Reserva</button>
+      <h3>Total ${{total}}</h3>
+    </div>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Juego</th>
+          <th scope="col">Cantida</th>
+          <th scope="col">Valor unitario</th>
+          <th scope="col">Accion</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor='let item of items'>
+          <td>{{item.id}}</td>
+          <td>{{item.nombre}}</td>
+          <td>{{item.stock}}</td>
+          <td>{{item.precio}}</td>
+          <button type="button" class="btn btn-danger"(click)="quitarJuego(item.id)">Danger</button>
+        </tr>
+      </tbody>
+    </table>
   </form>
