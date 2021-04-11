@@ -24,6 +24,7 @@ Los archivos para el Back-End y el funcionamiento del Front-End estan en el corr
 ### Front-End
 - Paso 1: Clonar el repositorio en una ubicacion de preferencia.
 - Paso 2: Abrir con el IDE (Visual Code).
+- ERROR: si ocurre un error, ejecutar desde consola `npm install --save-dev @angular-devkit/build-angular`
 - Paso 3: validar en el archivo `data.service.ts` en la linea 27, donde se encuentra la url de la API.
 - Paso 4: ejecutar el progama con el comando `ng serve --open`.
 
